@@ -20,9 +20,10 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-app.get(res,req=>{
-  res.send("Hi How are you")
-})
+app.get('/', (req, res) => {
+  res.send("Hi How are you");
+});
+
 // Socket.IO setup with CORS
 const io = socketIo(server, {
   cors: corsOptions
