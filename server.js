@@ -14,8 +14,9 @@ const server = http.createServer(app);
 
 // CORS configuration
 const corsOptions = {
-  origin:  "https://chatrix-backend.vercel.app",
-  credentials: true
+  origin: 'https://chatrix-chat-application.vercel.app', // or '*'
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 app.use(cors(corsOptions));
