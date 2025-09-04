@@ -2,12 +2,16 @@ const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
 const cors = require('cors');
-const connectDB = require('./config/database');
+const connectDB = require('./Config/database');
 const authRoutes = require('./routes/auth');
 const chatRoutes = require('./routes/chat');
 const { authenticateSocket } = require('./middleware/auth');
 
 require('dotenv').config();
+
+
+
+
 
 const app = express();
 const server = http.createServer(app);
