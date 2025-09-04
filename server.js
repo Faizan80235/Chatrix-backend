@@ -14,7 +14,7 @@ const server = http.createServer(app);
 
 // CORS configuration
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://chatrix-backend.vercel.app"],
+  origin:  "https://chatrix-backend.vercel.app",
   credentials: true
 };
 
