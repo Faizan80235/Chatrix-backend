@@ -9,24 +9,16 @@ const { authenticateSocket } = require('./middleware/auth');
 
 require('dotenv').config();
 
-
-
-
-
 const app = express();
 const server = http.createServer(app);
 
 // CORS configuration
 const corsOptions = {
-  origin: 'http://localhost:3000', // or '*'
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: ["http://localhost:3000", "http://127.0.0.1:3000"],
+  credentials: true
 };
 
 app.use(cors(corsOptions));
-app.get('/', (req, res) => {
-  res.send("Hi How are you");
-});
 
 // Socket.IO setup with CORS
 const io = socketIo(server, {
